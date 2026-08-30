@@ -1,0 +1,551 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>物理：特殊相対論</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']] }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <h2>目次</h2>
+      <a href="index.html">Home</a>
+      <a href="BH_GR.html">特殊相対論</a>
+
+    </aside>
+
+    <main class="content">
+      <h1>特殊相対論</h1>
+
+      <p>
+        相対速度を持つ二つの座標系における座標変換、つまりガリレイ変換
+        \[
+        x' = x - V_{\rm rel} t
+        \]
+        は、ニュートン力学において基本となる。
+      </p>
+
+      <p>
+        しかし、光の速度はどの慣性系で測定しても同じであることが知られている。
+        電磁気学においても、真空中の光速度は
+        \(c = 3.0\times10^8\,{\rm m\,s^{-1}}\)
+        で一定である。
+      </p>
+
+      <p>
+        この光速度不変の原理を用いて座標変換を考えると、
+        ガリレイ変換の代わりに<strong>ローレンツ変換</strong>が得られる。
+        \(x\) 方向に相対速度 \(V\) を持つ二つの座標系を考える。
+        ここで、\(\beta\) とローレンツ因子 \(\gamma\) を
+      </p>
+
+      <p>
+        \[
+        \begin{aligned}
+          \beta &= \frac{V}{c},\\
+          \gamma &= \frac{1}{\sqrt{1-\beta^2}}
+        \end{aligned}
+        \]
+      </p>
+
+      <p>
+        と定義すると、ローレンツ変換は
+      </p>
+
+      <p>
+        \[
+        \begin{aligned}
+          ct' &= \gamma (ct-\beta x),\\
+          x'  &= \gamma (x-\beta ct),\\
+          y'  &= y,\\
+          z'  &= z
+        \end{aligned}
+        \]
+      </p>
+
+      <p>
+        と表される。
+      </p>
+
+      <p>
+        ここで、時空座標を
+      </p>
+
+      <p>
+        \[
+        \begin{aligned}
+          x^0 &= ct,\\
+          x^1 &= x,\\
+          x^2 &= y,\\
+          x^3 &= z
+        \end{aligned}
+        \]
+      </p>
+
+      <p>
+        と定義する。このとき、ローレンツ変換は行列を用いて
+      </p>
+
+      <p>
+        \[
+        \Lambda^\mu{}_\nu =
+        \begin{pmatrix}
+          \gamma       & -\beta\gamma & 0 & 0\\
+          -\beta\gamma & \gamma       & 0 & 0\\
+          0            & 0            & 1 & 0\\
+          0            & 0            & 0 & 1
+        \end{pmatrix}
+        \]
+      </p>
+
+      <p>
+        \[
+        x'^\mu = \Lambda^\mu{}_\nu x^\nu
+        \]
+      </p>
+
+      <p>
+        と簡潔に表すことができる。
+      </p>
+
+      <p>
+        ここでは<strong>アインシュタインの縮約記法</strong>を用いている。
+        これは、同じ項の中に同じ添字が上付きと下付きで現れた場合、
+        その添字について和を取ることを意味する。
+        例えば \(\mu=0\) の場合、
+      </p>
+
+      <p>
+        \[
+        x'^0
+        =
+        \Lambda^0{}_0 x^0
+        + \Lambda^0{}_1 x^1
+        + \Lambda^0{}_2 x^2
+        + \Lambda^0{}_3 x^3
+        \]
+      </p>
+
+      <p>
+        であり、上のローレンツ変換行列を代入すると
+      </p>
+
+      <p>
+        \[
+        x'^0
+        =
+        \gamma x^0-\beta\gamma x^1
+        =
+        \gamma(ct-\beta x)
+        \]
+      </p>
+
+      <p>
+        となり、最初に示したローレンツ変換と一致する。
+      </p>
+
+      <p>この時速度の変換則は</p>
+      <p>
+        \[
+        v'
+        =
+        \frac{\mathrm{d} x'}{\mathrm{d} t'}
+        =
+        \frac{\mathrm{d} (x - \beta c t)}{\mathrm{d} (t - \beta x/ c )}
+        =
+        \frac{v - V}{1-V v /c^2}
+        \]
+      </p>
+      <p>となる。光速度cは不変に保たれ、cより小さい速度は変換後もcより小さい。</p>
+
+      <p>また、以下の組み合わせSは座標変換において値が保たれる。</p>
+      <p>
+        \[
+        \begin{aligned}
+        S
+        =
+        -(x^0)^2+(x^1)^2+(x^2)^2+(x^3)^2\\
+        =
+        -(x'^0)^2+(x'^1)^2+(x'^2)^2+(x'^3)^2
+        =
+        S'
+        \end{aligned}
+        \]
+      </p>
+      <p>今後これの微少量を線素と呼ぶ。ミンコフスキー計量\(\eta\)を用いて以下のように表される。</p>
+      <p>
+        \[
+        \eta_{\mu\nu} =
+        \begin{pmatrix}
+          -1           & 0            & 0 & 0\\
+          0            & 1            & 0 & 0\\
+          0            & 0            & 1 & 0\\
+          0            & 0            & 0 & 1
+        \end{pmatrix}
+        \]
+      </p>
+
+      <p>
+        \[
+        \mathrm{d}s^2 = \eta_{\mu\nu} \mathrm{d} x^\mu \mathrm{d} x^\nu 
+        \]
+      </p>
+      <p>線素の不変性よりミンコフスキー計量は以下のように変換される。</p>
+      <p>
+        \[
+        \eta_{\mu\nu} \Lambda^\mu{}_\alpha \Lambda^\mu{}_\beta =  \eta_{\alpha\beta}
+        \]
+      </p>
+      <h2>ベクトル・スカラー</h2>
+      <p>ここで、ベクトルとはローレンツ変換を行うことで座標系の変換ができるものを指す。</p>
+      <p>
+        \[
+        A'^\mu = \Lambda^\mu{}_\alpha A^\alpha
+        \]
+      </p>
+      この\(A^\mu\)を反変ベクトルという。これに対し、\(\Lambda^\mu{}_\nu\)の逆行列\(\Lambda_\nu{}^\mu\)を用いて
+      <p>
+        \[
+        B'_\mu = \Lambda_\mu{}^\alpha B_\alpha
+        \]
+      </p>
+      <p>と変換されるものを共変ベクトルと呼ぶ。添字の上下が違う。この上げ下げは\(\eta_{\mu\nu}\)やその逆行列\(\eta^{\mu\nu}\)をかけて行われる。</p>
+      <p>ベクトルの内積は以下のように定義される。</p>
+      <p>
+        \[
+        A\cdot B = \eta_{\mu\nu} A^\mu B^\nu = A^\mu B_\mu
+        \]
+      </p>
+      <p>これは座標変換に不変な量で、このような不変量はスカラーと呼ばれる。線素もスカラーである。</p>
+      <h2>テンソル</h2>
+      <p>テンソルとはローレンツ変換を行うことで座標系の変換ができる任意の階次の量である。ベクトルはテンソルに含まれる。
+      </p>
+      <p>
+        \[
+        M'^{\mu_{1}...\mu_{n}}_{\nu_{1}...\nu_{m}}=\Lambda^{\mu_{1}}{}_{\alpha_{1}}...\Lambda^{\mu_{n}}{}_{\alpha_{n}}\Lambda^{\nu_{1}}{}_{\beta_{1}}...\Lambda^{\nu_{m}}{}_{\beta_{m}}M^{\alpha_{1}...\alpha_{n}}_{\beta_{1}...\beta_{m}}
+        \]
+      </p>
+      <p>物理法則がテンソルで書かれていた時、それはローレンツ変換で結ばれた全ての座標系で成り立つ。
+        そのため物理法則がテンソルで書くことを相対論の目標とする。</p>
+      
+      <h2>相対論的力学</h2>
+      <p>線素が負の時、つまり物体の速度\(v=\mathrm{d}x/\mathrm{d}t\)がcより小さい時、固有時間\(\tau\)を以下のように定める。</p>
+      <p>
+        \[
+        c\mathrm{d}\tau = \sqrt{-\mathrm{d}s^2} = c \mathrm{d}t \sqrt{1-v^2/c^2}
+        \]
+      </p>
+      <p>運動が静止している速度系\(v=0\)で見ると\(\mathrm{d}\tau=\mathrm{d}t\)、つまり運動が静止している速度系での時間が固有時間だ。固有時間はスカラーである。</p>
+      <p>四元速度\(u\)と四元運動量\(p\)を定義する。ここで、\(\gamma=1/\sqrt{1-v^2/c^2}\)と置く。先ほどまでの\(\gamma\)とは少々意味が異なることに注意。</p>
+      <p>
+        \[
+        \begin{aligned}
+        u^\mu = \frac{\mathrm{d} x^\mu}{\mathrm{d} \tau} = \gamma (c, \bf{v})\\
+        p^\mu = m u^\mu = \gamma (mc, m\bf{v})
+        \end{aligned}
+        \]
+      </p>
+      <p>これらは以下を満たす。</p>
+      <p>
+        \[
+        \begin{aligned}
+        u^\mu u_\mu = -c^2\\
+        p^\mu p_\mu = -(mc)^2
+        \end{aligned}
+        \]
+      </p>
+      <p>
+        さらに、
+      </p>
+      <p>
+        \[
+        c p^0 = \gamma mc^2 \sim mc^2 + \frac{1}{2}mv^2+... = E
+        \]
+      </p>
+      <p>
+        非相対論的な場合の運動エネルギー\(\frac{1}{2}mv^2\)が２項目に表れている。
+        これは特殊相対論におけるエネルギーであり、１項目は静止質量エネルギーである。
+      </p>
+      <p>運動方程式</p>
+      <p>
+        \[
+        \frac{\mathrm{d}\bf{p}}{\mathrm{d}t}=\bf{F}
+        \]
+      </p>
+      <p>
+        は特殊相対論において以下のように拡張される。
+      </p>
+      <p>
+        \[
+        \frac{\mathrm{d}p^{\mu}}{\mathrm{d}\tau}=f^{\mu}
+        \]
+      </p>
+      <p>全てテンソルもしくはスカラーで記述されているので、この方程式は相対論的であると言える。
+        ここで\(f^\mu\)は四元力であり、非相対論的な場合の力を\(\bf{F}\)とすると</p>
+      <p>
+        \[
+        f^\mu=(\frac{\gamma}{c}\bf{v}\cdot\bf{F}, \gamma \bf{F})
+        \]
+      </p>
+      <p>そのためできるだけ非相対論的に表すと、以下のようになる。</p>
+      <p>
+        \[
+        \begin{aligned}
+        \frac{\mathrm{d}E}{\mathrm{d}t}=\bf{v}\cdot\bf{F}\\
+        \frac{\mathrm{d}\gamma \bf{p}}{\mathrm{d}t}=\bf{F}
+        \end{aligned}
+        \]
+      </p>
+      <p>第一式からも相対論的な\(E\)がエネルギーであることがわかる。</p>
+
+      <h2>相対論的電磁気学</h2>
+
+      <p>電磁気学の根幹となるMaxwell方程式はcgsガウス単位系で以下のように表される。</p>
+      <p>
+        \[
+        \begin{aligned}
+        \nabla\cdot\mathbf{E} &= 4\pi\rho, \\
+        \nabla\cdot\mathbf{B} &= 0, \\
+        \nabla\times\mathbf{E}
+        +\frac{1}{c}\frac{\partial\mathbf{B}}{\partial t} &= 0, \\
+        \nabla\times\mathbf{B}
+        -\frac{1}{c}\frac{\partial\mathbf{E}}{\partial t}
+        &= \frac{4\pi}{c}\mathbf{j}
+        \end{aligned}
+        \tag{1}
+        \]
+      </p>
+
+      <p>
+        偏微分やベクトル解析などを知らない場合は教科書を参照のこと。
+        これらの \(\mathbf{E}\) や \(\mathbf{B}\) は、
+        スカラーポテンシャル \(\phi\) とベクトルポテンシャル \(\mathbf{A}\) を用いて表される。
+      </p>
+
+      <p>
+        \[
+        \begin{aligned}
+        \mathbf{E}
+        &= -\nabla\phi
+          -\frac{1}{c}\frac{\partial\mathbf{A}}{\partial t},\\
+        \mathbf{B}
+        &= \nabla\times\mathbf{A}
+        \end{aligned}
+        \]
+      </p>
+
+      <p>
+        これにより式 (1) のうち
+        \(\nabla\cdot\mathbf{B}=0\) と
+        \(\nabla\times\mathbf{E}
+        +(1/c)\partial\mathbf{B}/\partial t=0\)
+        は自動的に成り立つため、残りの2式を考える。
+      </p>
+
+      <p>次に、四元偏微分演算子を定義する。</p>
+
+      <p>
+        \[
+        \partial_\mu
+        =
+        \frac{\partial}{\partial x^\mu}
+        =
+        \left(
+        \frac{1}{c}\frac{\partial}{\partial t},
+        \nabla
+        \right),
+        \qquad
+        \partial^\mu
+        =
+        \left(
+        \frac{1}{c}\frac{\partial}{\partial t},
+        -\nabla
+        \right)
+        \]
+      </p>
+
+      <p>
+        \(\partial_\mu\) は共変ベクトルとして変換する。
+      </p>
+
+      <p>
+        四元電磁ポテンシャルと四元電流密度を
+      </p>
+
+      <p>
+        \[
+        A^\mu=(\phi,\mathbf{A}),
+        \qquad
+        j^\mu=(c\rho,\mathbf{j})
+        \]
+      </p>
+
+      <p>
+        と定義する。
+        このとき残りの２式は
+      </p>
+
+      <p>
+        \[
+        \partial_\nu(\partial^\mu A^\nu - \partial^\nu A^\mu) = \frac{4\pi}{c}j^\mu
+        \]
+      </p>
+
+      <p>
+        とまとめられる。
+        また、
+        \(
+        j^\mu
+        =
+        (c\rho,\mathbf{j})
+        =
+        \rho(c,\mathbf{v})
+        \)
+        は四元ベクトルである。
+        ただし、ここでの \(\rho\) は観測系で測った電荷密度である。
+        固有電荷密度を \(\rho_0\) とすればローレンツ収縮を考慮して
+        \(
+        j^\mu=\rho_0u^\mu
+        =\rho_0\gamma(c,\mathbf{v})
+        \)
+        と書ける。
+      </p>
+
+      <p>また、電磁場テンソルを導入する。</p>
+
+      <p>
+        \[
+        F^{\mu\nu}
+        =
+        \partial^\mu A^\nu-\partial^\nu A^\mu
+        \]
+      </p>
+
+      <p>
+        \(A^\mu\) が四元ベクトルなので（証明略）、
+        \(F^{\mu\nu}\) は2階の反対称テンソルとなる。
+        これを用いると、Maxwell方程式のうち電荷・電流を含む2式は
+      </p>
+
+      <p>
+        \[
+        \partial_\mu F^{\mu\nu}
+        =
+        \frac{4\pi}{c}j^\nu
+        \]
+      </p>
+
+      <p>
+        と非常に簡潔に表される。
+      </p>
+
+      <p>電磁場テンソルの中身を見る。実際に計算すると、</p>
+
+      <p>
+        \[
+        F^{\mu\nu}
+        =
+        \begin{pmatrix}
+        0    & E_x & E_y & E_z \\
+        -E_x  & 0    & B_z & -B_y \\
+        -E_y  & -B_z  & 0    & B_x \\
+        -E_z  & B_y & -B_x  & 0
+        \end{pmatrix}
+        \]
+      </p>
+
+      <p>
+        Maxwell方程式の残りの2式は、
+        電磁ポテンシャルを用いて電磁場テンソルを定義した時点で
+        自動的に成り立っている。
+        これらを電磁場テンソルだけで書けば、Bianchi恒等式
+      </p>
+
+      <p>
+        \[
+        \partial_\lambda F_{\mu\nu}
+        +\partial_\mu F_{\nu\lambda}
+        +\partial_\nu F_{\lambda\mu}
+        =0
+        \]
+      </p>
+      <p>となる。</p>
+      <p> これをさらに簡潔に書くために、レビ・チビタ記号 
+        \(\epsilon^{\mu\nu\rho\sigma}\) を導入する。 
+        これは添字がすべて異なるとき \(+1\) または \(-1\)、 
+        同じ添字を含むとき \(0\) となる完全反対称な記号である。 
+        例えば \[ \epsilon^{0123}=+1, \qquad \epsilon^{1023}=-1, \qquad \epsilon^{0012}=0. \tag{12} \] 
+        添字を2つ入れ替えるたびに符号が反転する。 </p>
+      <p>
+        双対電磁場テンソル
+        \[
+        \tilde{F}^{\mu\nu}
+        =
+        \frac{1}{2}
+        \epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}
+        \]
+        を使えば、さらに
+      </p>
+
+      <p>
+        \[
+        \partial_\mu\tilde{F}^{\mu\nu}=0
+        \]
+      </p>
+
+      <p>
+        と書ける。
+      </p>
+
+      <p>
+        したがってMaxwell方程式は
+        \[
+        \partial_\mu F^{\mu\nu}
+        =
+        \frac{4\pi}{c}j^\nu,
+        \qquad
+        \partial_\mu\tilde{F}^{\mu\nu}=0
+        \]
+        という2つのテンソル方程式にまとめられる。
+        これらの方程式はローレンツ変換に対して同じ形を保つため、
+        Maxwell電磁気学は特殊相対論と整合する形で記述されており、基本法則の変更を必要としない。
+        これは、どの慣性系でも電磁波の伝播速度が \(c\) となることとも整合する。
+      </p>
+
+      <p>最後に、四元ローレンツ力は</p>
+
+      <p>
+        \[
+        f^\mu
+        =
+        \frac{q}{c}F^{\mu\nu}u_\nu
+        \]
+      </p>
+
+      <p>
+        と表される。
+      </p>
+      <h2> 練習問題 </h2> 
+      <p> 静止していた質量 \(m\)、電荷 \(q\) の荷電粒子が一様な電場 \(E\) を受け、 
+        \(t=0\) に静かに動き出した。 任意の時刻 \(t\) における粒子の速度と移動距離を求めよ。 
+      </p>
+    </main>
+
+
+
+  
+</body>
+</html>
