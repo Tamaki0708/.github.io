@@ -176,14 +176,13 @@ body::before {
 }
 
 
+
 .book-card {
   display: flex;
   align-items: center;
   gap: 20px;
-
   margin: 15px 0;
   padding: 15px;
-
   border: 1px solid #ccc;
   border-radius: 10px;
 }
@@ -193,13 +192,91 @@ body::before {
   height: 140px;
   object-fit: cover;
   border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.book-info {
+  flex: 1;
 }
 
 .book-info h3 {
   margin: 0 0 8px 0;
 }
 
+
+
 .author {
   margin: 0;
   color: #666;
+}
+
+
+.article-box {
+  margin: 28px 0;
+  padding: 22px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.article-box h3 {
+  margin-top: 0;
+}
+
+.article-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 18px auto 8px auto;
+  border-radius: 6px;
+}
+
+.credit {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+
+/* 書籍 */
+
+.book-box {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+
+  margin: 25px 0;
+  padding: 20px;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+}
+
+
+.book-info {
+  flex: 1;
+}
+
+.book-info h3 {
+  margin-top: 0;
+}
+
+
+/* スマホ */
+
+@media (max-width: 700px) {
+
+  .book-box {
+    flex-direction: column;
+  }
+
+  .book-cover {
+    flex: none;
+  }
+
+  .book-cover img {
+    width: 120px;
+  }
+
 }

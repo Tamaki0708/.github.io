@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ブラックホール・ジェット</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']] }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <h2>目次</h2>
+
+      <a href="index.html">Home</a>
+      <a href="BH.html">SMBH全般</a>
+
+      <hr>
+
+      <a href="#physics">物理</a>
+      <a href="#observation">観測</a>
+      <a href="#simulation">シミュレーション</a>
+      <a href="#sites">関連サイト</a>
+      <a href="#books">関連書籍</a>
+      <a href="#goods">関連商品</a>
+    </aside>
+
+
+    <main class="content">
+
+      <h1>ブラックホール</h1>
+
+      <p>
+        ブラックホール、特に超大質量ブラックホールと、
+        そこから形成される相対論的ジェットについて情報をまとめる。
+        ブラックホールそのものの物理だけでなく、
+        実際の観測例、シミュレーション、関連するウェブサイトや書籍についても紹介する。
+      </p>
+
+
+      <!-- ========================================================= -->
+      <!-- 物理 -->
+      <!-- ========================================================= -->
+
+      <h2 id="physics">物理</h2>
+
+      <p>
+        ブラックホールは、一般相対性理論によって記述される非常に強い重力場を持つ天体である。
+        特に銀河中心に存在する超大質量ブラックホールは、
+        太陽質量の \(10^6\)–\(10^{10}\) 倍程度の質量を持つ。
+      </p>
+
+      <p>
+        ブラックホールへ落下するガスは角運動量を持つため、
+        多くの場合は直接ブラックホールへ落ちるのではなく、
+        降着円盤を形成する。
+        円盤内部では磁場や乱流が角運動量輸送に重要な役割を果たし、
+        ガスは徐々に内側へ降着していく。
+      </p>
+
+      <p>
+        一方で、降着する物質のエネルギーのすべてがブラックホールへ吸収されるわけではない。
+        ブラックホール近傍では強力な放射、アウトフロー、
+        そして光速近くまで加速された相対論的ジェットが形成されることがある。
+      </p>
+
+      <p>
+        ジェットの形成にはブラックホールのスピンと磁場が重要であると考えられている。
+        特に、回転するブラックホールから磁場を介して回転エネルギーを取り出す
+        Blandford–Znajek機構は、
+        強力な相対論的ジェットを説明する代表的なモデルである。
+      </p>
+
+
+      <!-- ========================================================= -->
+      <!-- 観測 -->
+      <!-- ========================================================= -->
+
+      <h2 id="observation">観測</h2>
+      <p>ブラックホールに関する面白い観測例をいくつか紹介する。</p>
+
+
+      <section class="article-box">
+
+        <h3>世界初のブラックホールシャドウ観測</h3>
+
+        <img
+          src="images/m87_eht.jpeg"
+          alt="EHTによるM87ブラックホールシャドウ"
+          class="article-image"
+        >
+
+        <p class="credit">
+          EHT Collaboration
+        </p>
+
+        <p>
+          EHTが観測したM87銀河中心のブラックホールシャドウ。
+          ブラックホール近傍の高温プラズマから放射された電波が、
+          ブラックホールの非常に強い重力場によって曲げられることで
+          リング状の構造が形成されている。
+        </p>
+
+        <p>
+          2019年に公開されたこの画像は、
+          ブラックホール近傍を事象の地平面に近い空間スケールで
+          直接観測した最初の例となった。
+        </p>
+
+        <p>
+          <a
+            href="https://www.miz.nao.ac.jp/eht-j/c/pr/pr20190410.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EHT Japan：M87ブラックホール撮像
+          </a>
+        </p>
+
+      </section>
+
+
+      <section class="article-box">
+
+        <h3>M87 ジェットのズームイン</h3>
+
+        <img
+          src="images/m87_zoom.jpeg"
+          alt="M87ジェットのマルチスケール観測"
+          class="article-image"
+        >
+
+        <p>
+          電波やX線など、さまざまな観測装置によって得られた
+          M87のブラックホールとジェットの描像。
+        </p>
+
+        <p>
+          特にブラックホールから比較的近い領域では、
+          広がったジェットが徐々に細く収束していく構造が観測されており、
+          ジェットの加速・収束機構を理解するうえで非常に興味深い。
+        </p>
+
+        <p>
+          <a
+            href="https://www.aanda.org/articles/aa/full_html/2024/12/aa50497-24/aa50497-24.html#figures"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            A&amp;A：M87ジェットのマルチスケール観測
+          </a>
+        </p>
+
+      </section>
+
+
+      <section class="article-box">
+
+        <h3>M87のさらに大スケール</h3>
+
+        <img
+          src="images/m87_large_scale.jpeg"
+          alt="M87の大スケール電波構造"
+          class="article-image"
+        >
+
+        <p>
+          M87をさらに大きなスケールで電波観測すると、
+          現在の細いジェットだけでなく、
+          周囲に大きく広がった電波構造が見える。
+        </p>
+
+        <p>
+          これらには現在あるいは過去のジェット活動によって供給された
+          相対論的電子や磁場が含まれていると考えられ、
+          ブラックホール活動の長期的な履歴を調べる手がかりとなる。
+        </p>
+
+        <p>
+          またVLBIによる高分解能観測では、
+          ジェットの縁が明るく中心部が比較的暗い
+          limb-brightened構造が見られる。
+          ジェット内部の速度構造や磁場配置との関係が議論されている。
+        </p>
+
+        <p>
+          <a
+            href="https://www.glowconsortium.de/index.php/en/2015-04-29-07-49-43/blog-glow/172-m87-black-hole"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GLOW Consortium：M87
+          </a>
+        </p>
+
+      </section>
+
+
+      <section class="article-box">
+
+        <h3>ジェットの歳差運動</h3>
+
+        <img
+          src="images/m87_precession.png"
+          alt="M87ジェットの歳差運動"
+          class="article-image"
+        >
+
+        <p>
+          長期間のVLBI観測から、
+          M87ジェットの噴出方向が時間とともに周期的に変化していることが示された。
+        </p>
+
+        <p>
+          このジェットの歳差運動は、
+          ブラックホールのスピンによって生じる
+          Lense–Thirring効果と関連している可能性があり、
+          ブラックホールの回転を間接的に調べる手段として注目されている。
+        </p>
+
+        <p>
+          <a
+            href="https://www.miz.nao.ac.jp/eht-j/c/pr/pr20230928.1.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EHT Japan：M87ジェットの歳差運動
+          </a>
+        </p>
+
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- シミュレーション -->
+      <!-- ========================================================= -->
+
+      <h2 id="simulation">シミュレーション</h2>
+
+      <p>
+        ブラックホール近傍では、
+        強い重力場、磁場、相対論的なプラズマ運動が同時に関わる。
+        そのため理論研究では、
+        一般相対論的磁気流体力学
+        （GRMHD: General Relativistic Magnetohydrodynamics）
+        シミュレーションが広く用いられている。
+      </p>
+
+      <p>
+        GRMHDシミュレーションでは、
+        ブラックホールへのガス降着、
+        磁場の増幅、
+        降着円盤や高温コロナの形成、
+        さらにブラックホール近傍からのジェット形成などを
+        数値的に追跡することができる。
+      </p>
+
+      <p>
+        またシミュレーション結果に対して
+        一般相対論的な放射輸送計算を行うことで、
+        EHTで観測されるようなブラックホール画像を人工的に作り、
+        実際の観測結果と比較する研究も行われている。
+      </p>
+
+
+      <!-- ========================================================= -->
+      <!-- 関連サイト -->
+      <!-- ========================================================= -->
+
+      <h2 id="sites">関連サイト</h2>
+
+
+      <section class="article-box">
+
+        <h3>EHT-Japan</h3>
+
+        <p>
+          EHTの日本グループによるウェブサイト。
+          ブラックホール撮像、M87やSgr A*の研究、
+          最新のプレスリリースなどが公開されている。
+          研究成果の図も非常にかっこいい。
+        </p>
+
+        <p>
+          <a
+            href="https://www.miz.nao.ac.jp/eht-j/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EHT-Japan
+          </a>
+        </p>
+
+      </section>
+
+
+      <section class="article-box">
+
+        <h3>MOJAVE</h3>
+
+        <p>
+          VLBIによって活動銀河核ジェットを長期間観測しているプロジェクト。
+          高分解能電波画像だけでなく、
+          ジェットの時間変化、spectral index、偏光なども公開されている。
+        </p>
+
+        <p>
+          ジェット成分の超光速運動、
+          加速・減速、
+          磁場構造、
+          ジェットの時間発展などを調べることができる。
+        </p>
+
+        <p>
+          <a
+            href="https://www.cv.nrao.edu/MOJAVE/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MOJAVE
+          </a>
+        </p>
+
+      </section>
+
+
+      <section class="article-box">
+
+        <h3>An Atlas of DRAGNs</h3>
+
+        <p>
+          電波銀河やジェット天体の大スケール電波画像を集めたアトラス。
+          双極ジェット、電波ローブ、ホットスポットなど、
+          さまざまな形態の電波銀河を見ることができる。
+        </p>
+
+        <p>
+          天体ごとにジェットの形が大きく異なっており、
+          眺めているだけでも面白い。
+        </p>
+
+        <p>
+          <a
+            href="https://www.jb.man.ac.uk/atlas/frame.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            An Atlas of DRAGNs
+          </a>
+        </p>
+
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- 関連書籍 -->
+      <!-- ========================================================= -->
+
+
+        <h2 id="books">関連書籍</h2>
+
+        <h3>天文</h3>
+
+        <div class="book-card">
+        <img
+            src="images/2kyu.jpg"
+            alt="天文宇宙検定公式テキスト"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>天文宇宙検定公式テキスト</h3>
+
+            <p>
+            宇宙を博く学ぶ最初の足がかりとして最適。2級あたりがちょうど良い
+            </p>
+
+            <p>
+            <a href="https://www.astro-test.org/textbook/" target="_blank" rel="noopener noreferrer">
+                公式ページ
+            </a>
+            </p>
+        </div>
+        </div>
+
+
+        <div class="book-card">
+        <img
+            src="images/marepi.jpg"
+            alt="見えないブラックホールを見る"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>見えないブラックホールを見る</h3>
+
+            <p>
+            EHT Japanのリーダー本間先生の最新書籍。ブラックホールの特徴、研究史に始まり、どのような過程を経てブラックホール撮像に漕ぎ着けたのか、将来の研究などについて平易かつ詳細に記載されている良書。
+            </p>
+
+            <p>
+            <a href="https://www.nippyo.co.jp/shop/book/9760.html" target="_blank" rel="noopener noreferrer">
+                日本評論社
+            </a>
+            </p>
+        </div>
+        </div>
+
+
+        <div class="book-card">
+        <img
+            src="images/bh_astro.jpg"
+            alt="ブラックホール天文学"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>ブラックホール天文学</h3>
+
+            <p>
+            ブラックホール周辺の降着円盤の物理を主眼に最新研究まで触れている。学部時代の終盤はこれと宇宙電磁流体力学の基礎をバイブルとしていた。(現在の研究ではほぼ使っていないが)
+            </p>
+
+            <p>
+            <a href="https://www.nippyo.co.jp/shop/book/7019.html" target="_blank" rel="noopener noreferrer">
+                日本評論社
+            </a>
+            </p>
+        </div>
+        </div>
+
+
+        <div class="book-card">
+        <img
+            src="images/mhd.jpg"
+            alt="宇宙電磁流体力学の基礎"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>宇宙電磁流体力学の基礎</h3>
+
+            <p>
+            ブラックホール周辺のガス降着、超高温コロナ、フレア、そしてジェットといった現象は磁場が大きな役割を果たす。その磁気的現象の基礎として、この一冊。
+            </p>
+
+            <p>
+            <a href="https://www.nippyo.co.jp/shop/book/9001.html" target="_blank" rel="noopener noreferrer">
+                日本評論社
+            </a>
+            </p>
+        </div>
+        </div>
+
+
+        <div class="book-card">
+        <img
+            src="images/bh_physics.jpg"
+            alt="ブラックホール宇宙物理の基礎"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>ブラックホール宇宙物理の基礎</h3>
+
+            <p>
+            一般相対論的流体力学を学べる本書だが、非常に難しくまだ読めていない。いつか読破したい。
+            </p>
+
+            <p>
+            <a href="https://www.nippyo.co.jp/shop/book/9203.html" target="_blank" rel="noopener noreferrer">
+                日本評論社
+            </a>
+            </p>
+        </div>
+        </div>
+
+
+        <h3>物理</h3>
+
+        <div class="book-card">
+        <img
+            src="images/mechanics-relativity.jpg"
+            alt="解析力学と相対論"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>解析力学と相対論</h3>
+
+            <p>
+            この本の特徴はそのスマートさ。ただでさえ薄い本に解析力学と特殊相対論の内容が収まっている。そのため非常に簡潔で美しい構成になっているが、初学には向いてないかもしれない。
+            </p>
+
+            <p>
+            <a href="https://www.asakura.co.jp/detail.php?book_code=13772&srsltid=AfmBOoqvahy8cawsHNtswpZTU9CW3ggycHOy7pBqSszlGEITXwgiIvJQ" target="_blank" rel="noopener noreferrer">
+                朝倉書店
+            </a>
+            </p>
+        </div>
+        </div>
+
+
+        <div class="book-card">
+        <img
+            src="images/gravity.jpg"
+            alt="時空と重力"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>「時空と重力」藤井保憲</h3>
+
+            <p>
+            一般相対論に入門したい場合、これが一番。薄くストレートでわかりやすい。私は他の分厚い本で挫折していたが、20歳直前の初夏にこれを読み切ることができた。思い出の一冊。
+            </p>
+
+            <p>
+            公式ページはなさそう。
+            </p>
+        </div>
+        </div>
+
+
+        <div class="book-card">
+        <img
+            src="images/gr_intro.jpeg"
+            alt="一般相対性理論入門"
+            class="book-cover"
+        >
+
+        <div class="book-info">
+            <h3>一般相対性理論入門</h3>
+
+            <p>
+            一般相対論を上記より丁寧に構築する本。また、ISCOだったり重量レンズだったり様々な現象にも詳しい。ちなみに私の彼女は著者の須藤を毛嫌いしている。
+            </p>
+
+            <p>
+            <a href="https://www.nippyo.co.jp/shop/book/8107.html" target="_blank" rel="noopener noreferrer">
+                日本評論社
+            </a>
+            </p>
+        </div>
+        </div>
+
+
+
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- 関連商品 -->
+      <!-- ========================================================= -->
+
+      <h2 id="goods">関連商品</h2>
+
+
+      <section class="article-box">
+
+        <h3>ブラックホール A4ファイル</h3>
+
+        <p>
+
+        </p>
+
+        <p>
+          <a
+            href="https://www.unibo.jp/products/detail/397"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            商品ページ
+          </a>
+        </p>
+
+      </section>
+
+
+      <section class="article-box">
+
+        <h3>水沢観測所 ブラックホールのお菓子</h3>
+
+        <p>
+          水沢VLBI観測所がブラックホール撮像に関わったことにちなみ、
+          ブラックホールを模したお菓子が作られている。
+        </p>
+
+        <p>
+          現在でも現地やオンラインで販売されており、
+          個人的には「カリカリブラックホール」が好みだった。
+        </p>
+
+        <p>
+          <a
+            href="https://mizusawa-kashi.stores.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            水沢のお菓子
+          </a>
+        </p>
+
+      </section>
+
+
+    </main>
+
+  </div>
+</body>
+</html>
