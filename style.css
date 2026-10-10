@@ -262,6 +262,12 @@ body::before {
   margin-top: 0;
 }
 
+.jisha {
+    width: 400px;       /* 横幅 */
+    height: 300px;      /* 縦幅 */
+    object-fit: cover;  /* 縦横比を維持してトリミング */
+}
+
 
 /* スマホ */
 
@@ -276,6 +282,9 @@ body::before {
   }
 
   .book-cover img {
+    width: 120px;
+  }
+  .jisha img {
     width: 120px;
   }
 
