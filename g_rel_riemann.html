@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>物理：一般相対論</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']] }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <h2>目次</h2>
+      <a href="index.html">Home</a>
+      <a href="g_rel_riemann.html">Riemann幾何学</a>
+
+    </aside>
+
+    <main class="content">
+      <h1>一般相対論：Riemann幾何学</h1>
+      <p>ある点を表す際に座標という概念が使われるが、ここは直交座標系から飛び出して一般的な座標系を扱う。
+        例えば、極座標だったり、球面座標（地球の緯度、経度も球面座標だ）が挙げられる。
+        この時、直交座標でうまくいっていたことがうまくいかなくなることがある。ベクトルの平行移動などがそうだ。
+        一般相対論はRiemann幾何学という一般的な座標系を扱える手法のもとに成り立つ。
+        このページではそのRiemann幾何学をまとめる。
+        テンソルも扱うのでまずは特殊相対論のページで肩慣らしをすると良い。</p>
+
+      <h3>基底</h3>
+      <p>X,Yで直交座標を示す。ここで、座標変換x(X,Y),y(X,Y)を施して同じ次元の一般座標へ変換すると、それぞれの微小変化に対して以下の変換性がある。</p>
+      <p>\[\begin{aligned}
+        \mathrm{d}X=\frac{\partial X}{\partial x}\mathrm{d}x +\frac{\partial X}{\partial y}\mathrm{d}y \\
+        \mathrm{d}Y=\frac{\partial Y}{\partial x}\mathrm{d}x +\frac{\partial Y}{\partial y}\mathrm{d}y
+        \end{aligned}\tag{1}\]</p>
+      <p>x,y座標でxが\(\mathrm{d}x\)増えると、X,Y座標では\((\frac{\partial X}{\partial x}\mathrm{d}x,\frac{\partial Y}{\partial x}\mathrm{d}x)\)動いたように見える。</p>
+      <p>ここで、基底を定義する。高校数学では直交座標で単位ベクトル\(\mathbf{e}_X,\ \mathbf{e}_Y\)を習っただろう。
+        これらはX,Y座標で(1,0),(0,1)という値を持っていた。基底は各座標の値が増える方向を示している。
+        一般座標の基底ベクトルを直交座標の基底ベクトルをもとにして、直交座標で表すと、以下のように定義される。
+      </p>
+      <p>\[\begin{aligned}
+        e_\mu{}^\lambda = \frac{\partial X^{\lambda}}{\partial x^{\mu}}
+        \end{aligned}\tag{2}\]</p>
+      <p>これは一般座標における\(\mu\)番目の方向の基底\(\mathbf{e}_\mu\)の、直交座標における\(\lambda\)番目の座標値を表す。
+        もちろん、先ほどまで2次元で話していたがより高次元に一般化されている。
+        また、このように作られた基底ベクトルの長さは一般に1ではない。
+      </p>
+      <p>もう一つ別の一般座標系x'を考えると、一般座標系同士の基底の変換は以下のようになる。</p>
+      <p>
+        \[\begin{aligned}
+        {e'}_\mu{}^\lambda = \frac{\partial x^{\nu}}{\partial {x'}^{\mu}} e_\nu{}^\lambda
+        \end{aligned}\tag{3}\]
+      </p>
+
+      <h3>計量</h3>
+      <p>計量\(g_{\mu\nu}\)を以下のように定義する。
+        \[\begin{aligned}
+        g_{\mu\nu}=(\mathbf{e}_{\mu}\cdot\mathbf{e}_\nu)
+        \end{aligned}\tag{4}\]
+        直交座標では\(g_{\mu\nu}=\delta_{\mu\nu}\)である。
+        ここで\(\delta_{\mu\nu}\)はディラックのデルタと呼ばれ\(\mu=\nu\)の時1、\(\mu\ne\nu\)の時0となる記号。
+        直交座標の計量を\(\bar{g}_{\mu\nu}\)で表すと、一般座標の計量は
+        \[\begin{aligned}
+        g_{\mu\nu}=\bar{g}_{\rho\sigma}e_\mu{}^\rho e_\nu{}^\sigma
+        \end{aligned}\tag{5}\]
+        式(3)より一般座標系同士の変換性はこのようになる。
+        \[\begin{aligned}
+        {g'}_{\mu\nu}=\frac{\partial x^{\rho}}{\partial {x'}^{\mu}} \frac{\partial x^{\sigma}}{\partial {x'}^{\nu}} {g}_{\rho\sigma}
+        \end{aligned}\tag{6}\]
+        また、\(g_{\mu\nu}\)の逆行列\(g^{\mu\nu}\)を定義すると、以下の性質がある。
+        \[\begin{aligned}
+        g^{\mu\nu}g_{\mu\lambda}&=\delta^{\mu}_{\lambda}\\
+        {g'}^{\mu\nu}&=\frac{\partial {x'}^{\mu}}{\partial {x}^{\rho}} \frac{\partial {x'}^{\nu}}{\partial {x}^{\sigma}} {g}^{\rho\sigma}
+        \end{aligned}\tag{7}\]
+      </p>
+      
+      <h3>線素</h3>
+      <p>微小な長さ、線素\(\mathrm{d}s^2\)の定義とその変換性は
+        \[\begin{aligned}
+        \mathrm{d}s^2 &=\mathbf{e}_\mu \mathrm{d}x^\mu \cdot \mathbf{e}_\nu \mathrm{d}x^\nu\\
+        &= g_{\mu\nu} \mathrm{d}x^\mu \mathrm{d}x^\nu\\
+        &= \frac{\partial {x'}^{\rho}}{\partial {x}^{\mu}} \frac{\partial {x'}^{\sigma}}{\partial {x}^{\nu}} {g'}_{\rho\sigma}
+        \frac{\partial x^{\mu}}{\partial {x'}^{\alpha}} \mathrm{d}{x'}^\alpha \frac{\partial x^{\nu}}{\partial {x'}^{\beta}} \mathrm{d}{x'}^\beta\\
+        &=\delta^{\rho}_{\alpha}\delta^{\sigma}_{\beta}{g'}_{\rho\sigma}\mathrm{d}{x'}^\alpha\mathrm{d}{x'}^\beta\\
+        &=\mathrm{d}{s'}^2
+        \end{aligned}\tag{8}\]
+        つまり座標変換に対して不変となる。当たり前であるが、
+        \[\begin{aligned}
+        \mathrm{d}{x'}^\mu=\frac{\partial x^{\mu}}{\partial {x'}^{\nu}} \mathrm{d}{x'}^\nu
+        \end{aligned}\tag{9}\]
+        を用いた。
+      </p>
+
+      <h3>ベクトル、テンソル</h3>
+      <p>ベクトルを考える。ベクトルの基底への射影\(A_\mu=(\mathbf{A}\cdot\mathbf{e}_\mu)\)は、式(3)の基底の変換性より、
+        \[\begin{aligned}
+        A'_\mu=\frac{\partial {x}^{\nu}}{\partial {x'}^{\mu}} A_\nu
+        \end{aligned}\tag{10}\]
+        このベクトル成分は、下付きの添え字を持っているが、ここで上付きの添え字をもったベクトル成分をその変換性とともに定義する。
+        \[\begin{aligned}
+        A^\mu&=g^{\mu\nu}A_\nu\\
+        &=\frac{\partial {x}^{\mu}}{\partial {x'}^{\nu}} {A'}^\nu
+        \end{aligned}\tag{11}\]
+        ここで、下付きの成分は変換性が基底のそれ(式(3))と同じであるため共変ベクトルとよび、上付きは反変ベクトルとよぶ。
+      </p>
+      <p>より一般に、\(T^{\mu\nu}{}_{\lambda}=\frac{\partial {x}^{\mu}}{\partial {x'}^{\alpha}} \frac{\partial {x}^{\nu}}{\partial {x'}^{\beta}} 
+        \frac{\partial {x'}^{\gamma}}{\partial {x}^{\lambda}} {T'}^{\alpha \beta}{}_\gamma\)といった変換性を持つものをテンソルと呼ぶ。
+      </p>
+
+      <h3>Christoffel接続</h3>
+      <p>Christoffel接続\(\Gamma\)を以下のように定義する。
+        \[
+        \begin{aligned}
+        \Gamma_{\lambda\mu\nu}
+        &= \frac{1}{2}
+        (\partial_\mu g_{\lambda\nu}
+        + \partial_\nu g_{\lambda\mu}
+        - \partial_\lambda g_{\mu\nu})\\
+        \Gamma^\lambda{}_{\mu\nu}
+        &= g^{\lambda\tau}\Gamma_{\tau\mu\nu}
+        \end{aligned}
+        \tag{11}
+        \]
+        これは直交座標を用いると
+        \[
+        \begin{aligned}
+        \Gamma^{\lambda}{}_{\mu\nu}
+        &=
+        g^{\lambda\tau}\bar{g}_{\rho\sigma}
+        \frac{\partial^2 X^{\rho}}
+        {\partial x^{\mu}\partial x^{\nu}}
+        \frac{\partial X^{\sigma}}{\partial x^{\tau}}
+        \end{aligned}
+        \tag{12}
+        \]
+        これにより、直交座標or直線座標 (\(x=aX+b\)) で\(\Gamma^{\lambda}{}_{\mu\nu}=0\)。
+        また、下の添え字を入れ替えても値は変わらない。
+        \[
+        \begin{aligned}
+        \Gamma^\lambda{}_{\mu\nu}=\Gamma^\lambda{}_{\nu\mu}
+        \end{aligned}
+        \tag{12}
+        \]
+        大事なこととして、このChristoffel接続はテンソルではない。
+        \[
+        \begin{aligned}
+        {\Gamma'}_{\lambda\mu\nu}
+        &=
+        \frac{\partial x^\rho}{\partial {x'}^\lambda}
+        \frac{\partial x^\tau}{\partial {x'}^\mu}
+        \frac{\partial x^\sigma}{\partial {x'}^\nu}
+        \Gamma_{\rho\tau\sigma}
+        +
+        g_{\rho\sigma}
+        \frac{\partial x^\rho}{\partial {x'}^\lambda}
+        \frac{\partial^2 x^\sigma}{\partial {x'}^\mu \partial {x'}^\nu}
+        \\
+        {\Gamma'}^\lambda{}_{\mu\nu}
+        &=
+        \frac{\partial {x'}^\lambda}{\partial x^\rho}
+        \frac{\partial x^\tau}{\partial {x'}^\mu}
+        \frac{\partial x^\sigma}{\partial {x'}^\nu}
+        \Gamma^\rho{}_{\tau\sigma}
+        +
+        \frac{\partial {x'}^\lambda}{\partial x^\rho}
+        \frac{\partial^2 x^\rho}{\partial {x'}^\mu \partial {x'}^\nu}
+        \end{aligned}
+        \tag{12}
+        \]
+      </p>
+
+      <h3>平行移動</h3>
+      <p>ベクトルの平行移動を考える。
+        ある点におけるベクトルを別の点に移動した時、それは元の点と基底が異なるためにベクトルの成分が変わる可能性がある。
+        まして、曲面上のベクトルであれば別の点においてそのベクトルがその点における基底で表されない可能性すらある。
+        ここで"平行移動"をある点におけるベクトルを微小にそのまま動かしたものの、移動先の点での基底への射影と定義する。
+        \[
+        \begin{aligned}
+        \mathbf{A}_\mu (x+\Delta x//x)=\mathbf{A}(x)\cdot \mathbf{e}_\mu (x+\Delta x)
+        \end{aligned}
+        \tag{12}
+        \]
+        この時、
+        \[
+        \begin{aligned}
+        e_\mu{}^\rho (x+\Delta x)=e_\mu{}^\rho (x)+e_\kappa{}^\rho (x) \Gamma^\kappa{}_{\mu\nu} (x) \Delta x^\nu
+        \end{aligned}
+        \tag{12}
+        \]
+        となる。
+        <details><summary>計算</summary><p>あとで書く</p></details>
+        よって、平行移動したベクトルの成分は以下のようになる。
+        \[
+        \begin{aligned}
+        A_\mu (x+\mathrm{d} x//x)=A_\mu +\Gamma^\lambda{}_{\mu\nu} A_\lambda \mathrm{d} x^\nu
+        \end{aligned}
+        \tag{12}
+        \]
+        また、反変ベクトルは
+        \[
+        \begin{aligned}
+        A^\mu (x+\mathrm{d} x//x)=A^\mu -\Gamma^\mu{}_{\nu\lambda} A^\nu \mathrm{d} x^\lambda
+        \end{aligned}
+        \tag{12}
+        \]
+        <details><summary>計算</summary><p>あとで書く</p></details>
+    </p>
+
+    <h3>共変ベクトル</h3>
+    <p>Riemann幾何学もいよいよ佳境だ。"良い"微分を考えよう。</p>
+
+    </main>
+
+
+
+  
+</body>
+</html>

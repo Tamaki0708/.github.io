@@ -269,6 +269,22 @@ body::before {
 }
 
 
+.e-cover {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.e-tate-cover {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
 /* スマホ */
 
 @media (max-width: 700px) {
@@ -288,4 +304,7 @@ body::before {
     width: 120px;
   }
 
+  .e-cover img {
+    width: 120px;
+  }
 }
